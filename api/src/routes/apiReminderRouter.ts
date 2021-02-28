@@ -1,7 +1,6 @@
 import express from 'express'
 import ReminderRepository from '../db/repositories/ReminderRepository'
 import validateCreateReminder from '../middleware/validateCreateReminder'
-import validateUpdateReminder from '../middleware/validateUpdateReminder'
 
 const apiReminderRouter = express.Router()
 
@@ -23,7 +22,7 @@ apiReminderRouter.post('/', validateCreateReminder, async (req, res) => {
     }
 })
 
-apiReminderRouter.put('/', validateUpdateReminder, async (req, res) => {
+apiReminderRouter.put('/', async (req, res) => {
     try {
         const reminder = ReminderRepository.update({ ...req.body, id: req.params.id })
         res.status(200).json(reminder)
