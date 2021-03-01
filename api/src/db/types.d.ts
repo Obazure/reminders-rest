@@ -3,6 +3,7 @@ import { Optional } from 'sequelize'
 export interface INewReminder {
     text: string
     datetime: string
+    status?: boolean
 }
 
 export interface IReminder {

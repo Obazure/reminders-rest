@@ -1,5 +1,5 @@
-import {Sequelize} from 'sequelize'
-import {isDevelopment} from './app'
+import { Sequelize } from 'sequelize'
+import { isDevelopment } from './app'
 
 const MYSQL_DATABASE = process.env.MYSQL_DATABASE || 'test'
 const MYSQL_USER = process.env.MYSQL_USER || 'test'
